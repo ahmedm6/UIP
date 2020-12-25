@@ -1,0 +1,2 @@
+# UIP
+Uncovered Interest Parity
