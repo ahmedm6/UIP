@@ -7,9 +7,12 @@ The data we will use will be the interest rates of 10-year government bonds for 
 
 Because the standard UIP condition can be rewritten as  (E_(JPY/USD)^e-E_(JPY/USD))/E_(JPY/USD) = R_JPY-R_USD , if UIP holds, R_JPY-R_USD should be an unbiased estimator of  (E_(JPY/USD)^e-E_(JPY/USD))/E_(JPY/USD) . Thus, we can run the regression ∆s= α +β(R_JPY-R_USD )+ ε , where ∆s is the percent change of the spot interest rate. Under the null hypothesis, given there is no risk premium, α=0 and β=1, and UIP holds. If there is a risk premium, it would impact α. Using R, we can find R_JPY-R_USD and ∆s. To illustrate both the interest rate differential and the change of the percent foreign exchange rate, we can make a scatterplot of the interest rate differential and the percent change of the foreign exchange rate between the US and Japan.
 
-Call: lm ( dFX ~ dIR )	                     Estimate	   Standard Error	       Pr(>|t|)
-Intercept (α)	                               -2.9131	   1.6685	               0.0817
-Interest Rate Differential coefficient (β)	-1.0342	     0.6054	               0.0885
+
+| Call: lm ( dFX ~ dIR )                     | Estimate | Standard Error | Pr(>|t|) |
+| ------------------------------------------ |:--------:| --------------:| --------:|
+| Intercept (α)                              | -2.9131  | 1.6685         | 0.0817   |
+| Interest Rate Differential coefficient (β) | -1.0342  | 0.6054         | 0.0885   |
+
 
 If this data was evidence for UIP, the estimate for the intercept α should have been near or at 0, and the estimate for the interest rate differential β should have been near or at 1. R outputs that according to OLS, the estimates for α  and β are respectively far from 0 and 1. Furthermore, because the residual standard error suggests how much, on average, the data deviates from the regression line, the standard error values in the table suggest that both the interest rate differential coefficient and the intercept deviate significantly from the regression line. The estimates +/- the standard errors are still not 0 or 1 respectively for alpha or beta. 
 
