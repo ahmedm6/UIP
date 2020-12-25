@@ -3,6 +3,7 @@ library(tidyverse)
 library(reshape2)
 library(ggplot2)
 
+# using FRED data https://fred.stlouisfed.org/series/DGS10
 USi <- read_excel("DGS10.xlsx",
                   sheet = "FRED Graph",
                   skip = 11,
@@ -15,7 +16,7 @@ USiplot <- ggplot(USi, aes(Date, Rate)) +
 
 USiplot
 
-
+# using FRED data https://fred.stlouisfed.org/series/IRLTLT01JPM156N
 JPi <- read_excel("IRLTLT01JPM156N.xls",
                   sheet = "FRED Graph",
                   skip = 11,
@@ -28,7 +29,7 @@ JPiplot <- ggplot(JPi, aes(Date, Rate)) +
 
 JPiplot
 
-
+# using FRED data https://fred.stlouisfed.org/series/EXJPUS
 FXUSJP <- read_excel("EXJPUS.xls",
                      sheet = "FRED Graph",
                      skip = 11,
@@ -49,7 +50,7 @@ data <- merge( data , FXUSJP , by = "Date")
 
 #--------------------------
 
-#plots for part 2, "Description of Data"
+#plots for the Description of Data
 
 USJPIR <- ggplot(data = data, aes(Date))+
   geom_line(aes(y = Japan_IR, color = "Japan IR" ))+
@@ -66,7 +67,7 @@ FXplot
 
 #-------------------------
 
-# part 3, testing for UIP
+# testing for UIP
  
 data$dIR <- data$Japan_IR - data$US_IR # adding R(jpy) - R(usd)
 
