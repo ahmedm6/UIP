@@ -8,7 +8,7 @@ The data we will use will be the interest rates of 10-year government bonds for 
 Because the standard UIP condition can be rewritten as  (E_(JPY/USD)^e-E_(JPY/USD))/E_(JPY/USD) = R_JPY-R_USD , if UIP holds, R_JPY-R_USD should be an unbiased estimator of  (E_(JPY/USD)^e-E_(JPY/USD))/E_(JPY/USD) . Thus, we can run the regression ∆s= α +β(R_JPY-R_USD )+ ε , where ∆s is the percent change of the spot interest rate. Under the null hypothesis, given there is no risk premium, α=0 and β=1, and UIP holds. If there is a risk premium, it would impact α. Using R, we can find R_JPY-R_USD and ∆s. To illustrate both the interest rate differential and the change of the percent foreign exchange rate, we can make a scatterplot of the interest rate differential and the percent change of the foreign exchange rate between the US and Japan.
 
 
-| Call: lm ( dFX ~ dIR )                     | Estimate | Standard Error | Pr(>|t|) |
+| Call: lm ( dFX ~ dIR )                     | Estimate | Standard Error | Pr(>abs(t)) |
 | ------------------------------------------ |:--------:| --------------:| --------:|
 | Intercept (α)                              | -2.9131  | 1.6685         | 0.0817   |
 | Interest Rate Differential coefficient (β) | -1.0342  | 0.6054         | 0.0885   |
@@ -18,8 +18,5 @@ If this data was evidence for UIP, the estimate for the intercept α should have
 
 The results of our regression show clearly the data is not consistent with UIP. A possible explanation for this result is that there might be a variable risk premium in the Yen. The Japanese government experienced economic turbulence due to their losses from World War 2, and the Yen lost much of its value before the war. High risk premia due to high levels of government debt can lead to higher interest rates, which gives a positive correlation to interest rates and risk premia. If the risk premium is an increasing function of the interest rate, β would be less than 1, as our results show. 
 
-| Call: lm ( dFX ~ dIR )        | Estimate           | Standard Error  |
-| ------------- |:-------------:| -----:|
-| Intercept (α)      | -2.9131 | 1.6685  |
-| Interest Rate Differential coefficient (β)      | -1.0342      |   0.6054 |
+
 
