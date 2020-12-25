@@ -18,3 +18,8 @@ If this data was evidence for UIP, the estimate for the intercept α should have
 
 The results of our regression show clearly the data is not consistent with UIP. A possible explanation for this result is that there might be a variable risk premium in the Yen. The Japanese government experienced economic turbulence due to their losses from World War 2, and the Yen lost much of its value before the war. High risk premia due to high levels of government debt can lead to higher interest rates, which gives a positive correlation to interest rates and risk premia. If the risk premium is an increasing function of the interest rate, β would be less than 1, as our results show. 
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
